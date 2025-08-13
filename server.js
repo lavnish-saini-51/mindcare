@@ -9,6 +9,7 @@ dotenv.config();
 // Import routes
 const journalRoutes = require('./routes/journal');
 const chatbotRoutes = require('./routes/chatbot');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 
@@ -26,6 +27,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mindcare'
 .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
+app.use('/api/auth', authRoutes);
 app.use('/api/journal', journalRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 
