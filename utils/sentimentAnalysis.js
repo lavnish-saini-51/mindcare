@@ -51,3 +51,4 @@ const analyzeSentiment = (text) => {
 };
 
 module.exports = { analyzeSentiment };
+

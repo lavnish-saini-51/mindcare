@@ -7,7 +7,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 // Import routes
-const authRoutes = require('./routes/auth');
 const journalRoutes = require('./routes/journal');
 const chatbotRoutes = require('./routes/chatbot');
 
@@ -27,7 +26,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mindcare'
 .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
-app.use('/api/auth', authRoutes);
 app.use('/api/journal', journalRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 
@@ -52,3 +50,4 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`MindCare server running on port ${PORT}`);
 });
+

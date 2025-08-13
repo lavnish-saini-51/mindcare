@@ -32,3 +32,4 @@ const journalSchema = new mongoose.Schema({
 journalSchema.index({ userId: 1, date: -1 });
 
 module.exports = mongoose.model('Journal', journalSchema);
+
